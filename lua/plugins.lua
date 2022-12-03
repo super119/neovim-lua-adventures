@@ -14,6 +14,8 @@ packer.startup({
     use("glepnir/dashboard-nvim")
     use("ahmedkhalf/project.nvim")
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("williamboman/nvim-lsp-installer")
+    use("neovim/nvim-lspconfig")
   end,
   config = {
     display = {
