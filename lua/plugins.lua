@@ -31,6 +31,8 @@ packer.startup({
     use("rafamadriz/friendly-snippets")
     -- ui (新增)
     use("onsails/lspkind-nvim")
+    -- formatting
+    use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
   end,
   config = {
     display = {
