@@ -33,6 +33,7 @@ mason.setup({
 mason_config.setup({
   ensure_installed = {
     "sumneko_lua",
+    "rust_analyzer",
   },
 })
 
@@ -42,6 +43,7 @@ mason_config.setup({
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
+  rust_analyzer = require("lsp.config.rust"),
 }
 
 for name, config in pairs(servers) do
