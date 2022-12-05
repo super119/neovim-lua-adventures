@@ -34,6 +34,7 @@ mason_config.setup({
   ensure_installed = {
     "sumneko_lua",
     "rust_analyzer",
+    "bashls",
   },
 })
 
@@ -44,6 +45,7 @@ mason_config.setup({
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   rust_analyzer = require("lsp.config.rust"),
+  bashls = require("lsp.config.bash"),
 }
 
 for name, config in pairs(servers) do
