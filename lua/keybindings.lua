@@ -132,6 +132,8 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
   -- find symbol (use ctrl+j to list candidates when typing symbols)
   mapbuf("n", "<A-q>", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", opt)
+  -- list all symbols of current buffer in the quick fix window
+  mapbuf("n", "<A-d>", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opt)
   -- go xx
   mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
   mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
