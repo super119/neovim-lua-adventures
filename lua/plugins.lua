@@ -33,6 +33,9 @@ packer.startup({
     use("onsails/lspkind-nvim")
     -- formatting
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+    -- gtags
+    use("super119/vim-gtags")
+    use("super119/vim-gtags-cscope")
   end,
   config = {
     display = {
