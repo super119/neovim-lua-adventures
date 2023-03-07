@@ -10,6 +10,7 @@ packer.startup({
     use({ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
     use("arkav/lualine-lsp-progress")
     use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use("LinArcX/telescope-env.nvim")
     use({ "glepnir/dashboard-nvim", requires = { "nvim-tree/nvim-web-devicons" } })
     use("ahmedkhalf/project.nvim")
