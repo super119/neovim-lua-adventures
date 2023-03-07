@@ -48,12 +48,15 @@ cmp.setup.cmdline("/", {
   },
 })
 
+-- When using gtags in cmdline(e.g: find a symbol), a big gtags database causes the
+-- CMP which is configured below super slow, even hangs neovim
+-- So disable it for now
 -- : 命令行模式中使用 path 和 cmdline 源.
-cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path" },
-  }, {
-    { name = "cmdline" },
-  }),
-})
+-- cmp.setup.cmdline(":", {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = cmp.config.sources({
+--     { name = "path" },
+--   }, {
+--     { name = "cmdline" },
+--   }),
+-- })
