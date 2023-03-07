@@ -11,7 +11,7 @@ packer.startup({
     use("arkav/lualine-lsp-progress")
     use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
     use("LinArcX/telescope-env.nvim")
-    use({ "glepnir/dashboard-nvim", event = "VimEnter", requires = { "nvim-tree/nvim-web-devicons" } })
+    use({ "glepnir/dashboard-nvim", requires = { "nvim-tree/nvim-web-devicons" } })
     use("ahmedkhalf/project.nvim")
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use({ "williamboman/mason.nvim" })
