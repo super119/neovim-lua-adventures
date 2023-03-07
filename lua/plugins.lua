@@ -5,13 +5,13 @@ packer.startup({
     use("wbthomason/packer.nvim")
     -- 你的插件列表...
     use("folke/tokyonight.nvim")
-    use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
-    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
-    use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+    use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
+    use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" }})
+    use({ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
     use("arkav/lualine-lsp-progress")
-    use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
+    use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
     use("LinArcX/telescope-env.nvim")
-    use("glepnir/dashboard-nvim")
+    use({ "glepnir/dashboard-nvim", event = "VimEnter", requires = { "nvim-tree/nvim-web-devicons" } })
     use("ahmedkhalf/project.nvim")
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use({ "williamboman/mason.nvim" })
