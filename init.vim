@@ -14,6 +14,10 @@ lua require("lsp.cmp")
 lua require("lsp.ui")
 lua require("lsp.null-ls")
 
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+
 " Disable mouse
 " The neovim 0.8 enables mouse by default, this makes the right clicking of
 " mouse creates a popup menu while not pasting contents
