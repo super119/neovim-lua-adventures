@@ -5,6 +5,7 @@ packer.startup({
     use("wbthomason/packer.nvim")
     -- 你的插件列表...
     use("folke/tokyonight.nvim")
+    use({ "catppuccin/nvim", as = "catppuccin" })
     use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
     use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" }})
     use({ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
