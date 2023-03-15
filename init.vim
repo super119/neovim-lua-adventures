@@ -18,6 +18,9 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 
+" Search will not go back to the beginning
+set nowrapscan
+
 " Disable mouse
 " The neovim 0.8 enables mouse by default, this makes the right clicking of
 " mouse creates a popup menu while not pasting contents
