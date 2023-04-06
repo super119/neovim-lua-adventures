@@ -15,7 +15,10 @@ lualine.setup({
   extensions = { "nvim-tree", "toggleterm" },
   sections = {
     lualine_c = {
-      "filename",
+      {
+        "filename",
+        path = 2
+      },
       {
         "lsp_progress",
         spinner_symbols = { " ", " ", " ", " ", " ", " " },
