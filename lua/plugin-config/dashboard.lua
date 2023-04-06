@@ -26,6 +26,11 @@ db.setup({
     },
     center = {
       {
+        icon = "  ",
+        desc = "Edit init.vim                       ",
+        action = "edit ~/.config/nvim/init.vim",
+      },
+      {
         icon = "  ",
         desc = "Edit keybindings                    ",
         action = "edit ~/.config/nvim/lua/keybindings.lua",
