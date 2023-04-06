@@ -12,6 +12,36 @@ lua require("lsp.cmp")
 lua require("lsp.ui")
 lua require("lsp.null-ls")
 
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+" You can revert the settings after the call like so:
+"   filetype indent off   " Disable file-type-specific indentation
+"   syntax off            " Disable syntax highlighting
+
+let g:Lf_ShortcutF = '<c-p>'
+let g:Lf_ShowDevIcons = 0
+let g:Lf_WindowPosition = 'popup'
+" Press ctrl-d to open the symbol list of current buffer
+" This means we don't need vim-taglist anymore
+noremap <c-d> :Leaderf bufTag<cr>
+let g:Lf_WildIgnore = {
+	\ 'dir': ['out', '.svn','.git','.hg', '.mypy_cache'],
+	\ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
+	\}
+
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
