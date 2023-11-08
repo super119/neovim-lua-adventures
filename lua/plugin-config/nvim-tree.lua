@@ -4,14 +4,33 @@ if not status then
     return
 end
 
--- 列表操作快捷键
-local list_keys = require('keybindings').nvimTreeList
+local function my_on_attach(bufnr)
+    local api = require "nvim-tree.api"
+
+    local function opts(desc)
+      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    -- default mappings
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- custom mappings
+    -- Refer to: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L2082
+    -- 分屏打开文件
+    vim.keymap.set('n', 'v',       api.node.open.vertical,              opts('Open: Vertical Split'))
+    vim.keymap.set('n', 'h',       api.node.open.horizontal,            opts('Open: Horizontal Split'))
+    -- 文件操作
+    vim.keymap.set('n', '<F5>',    api.tree.reload,                     opts('Refresh'))
+    vim.keymap.set('n', 'n',       api.fs.create,                       opts('Create'))
+    vim.keymap.set('n', 'd',       api.fs.remove,                       opts('Delete'))
+    vim.keymap.set('n', 'r',       api.fs.rename_basename,              opts('Rename: Basename'))
+end
+
 nvim_tree.setup({
     -- 不显示 git 状态图标
     git = {
         enable = false,
     },
-    -- project plugin 需要这样设置
     update_cwd = true,
     update_focused_file = {
         enable = true,
@@ -27,13 +46,6 @@ nvim_tree.setup({
         width = 40,
         -- 也可以 'right'
         side = 'left',
-        -- 隐藏根目录
-        hide_root_folder = false,
-        -- 自定义列表中快捷键
-        mappings = {
-            custom_only = false,
-            list = list_keys,
-        },
         -- 不显示行数
         number = false,
         relativenumber = false,
@@ -48,6 +60,11 @@ nvim_tree.setup({
             quit_on_open = false,
         },
     },
+    renderer = {
+        -- 不显示root folder
+        root_folder_label = '',
+    },
+    on_attach = my_on_attach,
 })
 -- 自动关闭
 vim.cmd([[
