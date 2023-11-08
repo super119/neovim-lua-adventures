@@ -45,6 +45,7 @@ let g:Lf_WildIgnore = {
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
+set number
 
 " Search will not go back to the beginning
 set nowrapscan
