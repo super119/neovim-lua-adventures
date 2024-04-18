@@ -22,7 +22,7 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 
 " Make sure you use single quotes
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'Yggdroot/LeaderF', { 'tag': 'v1.25', 'do': ':LeaderfInstallCExtension' }
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -42,8 +42,8 @@ let g:Lf_WildIgnore = {
 	\ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 	\}
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
 set noexpandtab
 set number
 
